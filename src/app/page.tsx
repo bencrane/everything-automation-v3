@@ -385,7 +385,9 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.25}>
             <a
-              href="#"
+              href="https://cal.com/revenue-engineer/25min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-10 inline-flex items-center gap-2 bg-white px-8 py-4 text-sm font-medium tracking-wide text-black transition-all hover:bg-neutral-200"
             >
               Get started
