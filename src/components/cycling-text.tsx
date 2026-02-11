@@ -65,7 +65,13 @@ export function CyclingText() {
   return (
     <span>
       {displayText}
-      <span className="ml-[0.05em] animate-blink font-light text-neutral-500">
+      <span
+        className="animate-blink font-light"
+        style={{
+          marginLeft: "0.05em",
+          color: "var(--color-text-faint)",
+        }}
+      >
         _
       </span>
     </span>

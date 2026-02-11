@@ -38,9 +38,26 @@ function MarqueeRow({
   reverse?: boolean;
 }) {
   const content = items.map((name, i) => (
-    <span key={i} className="flex items-center gap-4 px-5">
-      <span className="h-[3px] w-[3px] rounded-full bg-neutral-700 shrink-0" />
-      <span className="whitespace-nowrap font-mono text-[13px] text-neutral-600">
+    <span
+      key={i}
+      className="flex items-center"
+      style={{ gap: "var(--space-4)", padding: "0 var(--space-5)" }}
+    >
+      <span
+        className="shrink-0 rounded-full"
+        style={{
+          width: "3px",
+          height: "3px",
+          background: "var(--gray-7)",
+        }}
+      />
+      <span
+        className="whitespace-nowrap font-mono"
+        style={{
+          fontSize: "var(--text-sm)",
+          color: "var(--color-text-muted)",
+        }}
+      >
         {name}
       </span>
     </span>
@@ -62,12 +79,32 @@ function MarqueeRow({
 
 export function SystemMarquee() {
   return (
-    <div className="relative border-y border-neutral-800/50 py-6 space-y-4">
-      {/* Edge fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
-      <MarqueeRow items={row1} />
-      <MarqueeRow items={row2} reverse />
+    <div
+      className="relative"
+      style={{
+        borderTop: "1px solid var(--color-border-subtle)",
+        borderBottom: "1px solid var(--color-border-subtle)",
+        padding: "var(--space-6) 0",
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-10"
+        style={{
+          width: "var(--space-24)",
+          background: "linear-gradient(to right, var(--color-bg), transparent)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-10"
+        style={{
+          width: "var(--space-24)",
+          background: "linear-gradient(to left, var(--color-bg), transparent)",
+        }}
+      />
+      <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+        <MarqueeRow items={row1} />
+        <MarqueeRow items={row2} reverse />
+      </div>
     </div>
   );
 }
