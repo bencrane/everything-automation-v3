@@ -152,6 +152,9 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* ── Marquee ─────────────────────────────────────────── */}
+      <SystemMarquee />
+
       {/* ── Positioning ──────────────────────────────────────── */}
       <Section spacing="xl">
         <div
@@ -181,9 +184,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
-      {/* ── Marquee ─────────────────────────────────────────── */}
-      <SystemMarquee />
 
       {/* ── Categories ──────────────────────────────────────── */}
       <Section id="systems">
@@ -358,7 +358,28 @@ export default function Home() {
         }}
       >
         <Container>
-          <Label>&copy; {new Date().getFullYear()} Everything Automation</Label>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "var(--space-4)",
+            }}
+          >
+            <Label>&copy; {new Date().getFullYear()} Everything Automation</Label>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-end",
+                gap: "var(--space-1)",
+              }}
+            >
+              <Label>Contact Us: team@everythingautomation.com</Label>
+              <Label>(929) 399-0039</Label>
+            </div>
+          </div>
         </Container>
       </footer>
     </div>
