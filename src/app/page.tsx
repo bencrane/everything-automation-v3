@@ -14,49 +14,65 @@ import { ArrowRight } from "lucide-react";
 const categories = [
   {
     id: "01",
-    name: "Signal Detection",
+    name: "Outbound",
     items:
-      "Intent monitoring, funding alerts, hiring signals, market expansion tracking, competitor moves.",
+      "Find leads, enrich contacts, and draft personalized outreach — triggered by hiring signals, funding events, or lookalike targeting.",
   },
   {
     id: "02",
-    name: "Content Systems",
+    name: "Content",
     items:
-      "Automated research, writing, SEO optimization, distribution, scheduling, repurposing.",
+      "Lead magnets, podcast repurposing, social content — generated from your expertise, formatted for every platform.",
   },
   {
     id: "03",
-    name: "Pipeline Automation",
+    name: "Sales Intel",
     items:
-      "Outreach sequencing, lead scoring, event follow-up, referral workflows, LinkedIn engagement.",
+      "Pre-meeting briefs, competitor ad analysis, market research — delivered before you need to ask for it.",
   },
   {
     id: "04",
-    name: "Operations",
+    name: "Close",
     items:
-      "CRM enrichment, reporting sync, onboarding flows, data warehouse, approvals, notifications.",
+      "Proposals, pitch decks, and follow-up sequences — generated in minutes from a conversation.",
+  },
+  {
+    id: "05",
+    name: "Creative",
+    items:
+      "AI-generated video ads, UGC content, ad copy variations — production-quality assets without the production timeline.",
+  },
+  {
+    id: "06",
+    name: "Competitive Intel",
+    items:
+      "Monitor competitor ads across Meta, LinkedIn, TikTok. Know what they're running before your client does.",
   },
 ];
 
 const catalogSystems = [
-  { name: "Funding Signal Detector", category: "Signals", description: "Instant alerts when target accounts close funding rounds." },
-  { name: "New Hire Detection", category: "Signals", description: "Know when key roles are filled at your target accounts." },
-  { name: "Cold Outreach Sequencer", category: "Pipeline", description: "Multi-channel outbound triggered by real-time intent signals." },
-  { name: "LinkedIn Engagement Engine", category: "Pipeline", description: "Automated connection, engagement, and messaging workflows." },
-  { name: "CRM Enrichment Engine", category: "Operations", description: "Auto-enrich every contact with firmographic and behavioral data." },
-  { name: "Lead Scoring Pipeline", category: "Pipeline", description: "Score and route leads based on fit and intent signals." },
-  { name: "Content Distribution System", category: "Content", description: "Publish once, distribute across every channel automatically." },
-  { name: "SEO Content Generator", category: "Content", description: "Research-driven content generation optimized for search." },
-  { name: "Webinar-to-Pipeline Flow", category: "Pipeline", description: "Convert webinar attendees into qualified pipeline, automatically." },
-  { name: "Competitor Alert System", category: "Signals", description: "Real-time tracking of competitor positioning and activity." },
-  { name: "Customer Onboarding Flow", category: "Operations", description: "Sequenced onboarding that adapts to user behavior." },
-  { name: "Reporting Sync Engine", category: "Operations", description: "Aggregate data from every tool into one source of truth." },
+  // Outbound
+  { name: "Job Posting Signal Outbound", category: "Outbound", description: "Find companies hiring for specific roles and reach their decision makers with personalized outreach." },
+  { name: "Funding Signal Outbound", category: "Outbound", description: "Target companies that just raised money with timely, relevant outreach." },
+  { name: "Creative Ideas Campaign", category: "Outbound", description: "Scrape your prospect's site, generate specific ideas for how you can help, and send emails that actually get replies." },
+  // Content
+  { name: "Lead Magnet Generator", category: "Content", description: "Generate ebooks, guides, and checklists from your expertise. Ready to gate behind a landing page." },
+  { name: "Podcast Content Transformer", category: "Content", description: "Turn one podcast episode into a week of social content across every platform." },
+  // Sales Intel
+  { name: "Pre-Meeting Sales Brief", category: "Sales Intel", description: "Company research, contact context, and talking points delivered before every call." },
+  { name: "Ad Intelligence Analyzer", category: "Sales Intel", description: "See what competitors are running across Meta, LinkedIn, and TikTok. Breakdowns, rewrites, and creative prompts included." },
+  // Close
+  { name: "Proposal Generator", category: "Close", description: "Generate branded proposals from a conversation. Sent for signature in minutes." },
+  // Creative
+  { name: "AI Video Ad Generator", category: "Creative", description: "Upload product photos, get UGC-style video ads back. Script, visuals, and voiceover — all AI-generated." },
+  // Competitive Intel
+  { name: "Competitor Ad Alerts", category: "Competitive Intel", description: "Monitor competitor ad launches across platforms. Get notified with analysis and suggested counter-moves." },
 ];
 
 const steps = [
-  { id: "01", name: "Scope", description: "We map your workflows, identify the highest-leverage automation opportunities, and match you with systems we've already built — or architect new ones." },
-  { id: "02", name: "Build", description: "Our team configures, connects, and tests every system against your infrastructure. Production-grade from day one." },
-  { id: "03", name: "Deploy", description: "Your systems go live. Monitor performance, track ROI, and manage everything from your dashboard." },
+  { id: "01", name: "Find", description: "Identify your ideal prospects through hiring signals, funding events, and lookalike targeting." },
+  { id: "02", name: "Engage", description: "Personalized outreach, content, and competitive intel — generated and delivered automatically." },
+  { id: "03", name: "Close", description: "Proposals, briefs, and follow-ups — ready before the meeting starts." },
 ];
 
 /* ── Page ──────────────────────────────────────────────────── */
@@ -107,11 +123,6 @@ export default function Home() {
         />
         <Container className="relative">
           <FadeIn>
-            <Label className="block" style={{ marginBottom: "var(--space-8)" }}>
-              Automation Infrastructure
-            </Label>
-          </FadeIn>
-          <FadeIn delay={0.1}>
             <h1
               className="font-bold"
               style={{
@@ -132,8 +143,7 @@ export default function Home() {
               className="max-w-xl"
               style={{ marginTop: "var(--space-8)" }}
             >
-              We engineer and deploy production automation systems.
-              Every domain. Every workflow. Managed from one place.
+              AI-powered systems that find leads, book meetings, generate proposals, and close deals — managed from one dashboard.
             </Body>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -155,6 +165,29 @@ export default function Home() {
       {/* ── Marquee ─────────────────────────────────────────── */}
       <SystemMarquee />
 
+      {/* ── Workspace ───────────────────────────────────────── */}
+      <Section id="workspace">
+        <FadeIn>
+          <div className="max-w-xl" style={{ marginBottom: "var(--space-16)" }}>
+            <Heading size="2xl">
+              Every system. One dashboard.
+            </Heading>
+            <Body
+              size="sm"
+              muted
+              style={{ marginTop: "var(--space-3)" }}
+            >
+              Every system we deploy lives in your workspace. Real-time
+              execution data, system health, and performance metrics —
+              visible and manageable from one place.
+            </Body>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <DashboardPreview />
+        </FadeIn>
+      </Section>
+
       {/* ── Positioning ──────────────────────────────────────── */}
       <Section spacing="xl">
         <div
@@ -162,23 +195,18 @@ export default function Home() {
         >
           <FadeIn>
             <Heading size="2xl" className="max-w-md">
-              Most companies automate nothing. The rest duct-tape it together.
+              Most agencies automate nothing. The rest duct-tape it together.
             </Heading>
           </FadeIn>
           <div className="flex flex-col" style={{ gap: "var(--space-10)" }}>
             <FadeIn delay={0.1}>
               <Body muted className="max-w-md">
-                AI has made it possible to automate almost any business workflow.
-                But the gap between what&apos;s possible and what&apos;s actually
-                running in production is enormous.
+                Your team manually scrapes competitors, writes outbound one email at a time, builds proposals from scratch, and preps for sales calls with a Google search. It works — until you try to scale.
               </Body>
             </FadeIn>
             <FadeIn delay={0.2}>
               <Body muted className="max-w-md">
-                Building reliable automation systems requires real engineering —
-                not a Zapier account and a prayer. We&apos;re an automation
-                engineering firm. We&apos;ve built systems across every domain,
-                and we deploy them into your infrastructure.
+                We&apos;ve built the systems that replace all of that. Outbound that finds and writes itself. Competitive intel that shows up before your client asks. Proposals generated in minutes. All running from one platform, all managed for you.
               </Body>
             </FadeIn>
           </div>
@@ -203,7 +231,7 @@ export default function Home() {
             </Body>
           </div>
         </FadeIn>
-        <div className="grid gap-[var(--space-3)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-[var(--space-3)] sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat, i) => (
             <FadeIn key={cat.id} delay={i * 0.08}>
               <Card variant="compact" className="h-full">
@@ -251,29 +279,6 @@ export default function Home() {
 
       {/* ── Divider ─────────────────────────────────────────── */}
       <Divider />
-
-      {/* ── Workspace ───────────────────────────────────────── */}
-      <Section id="workspace">
-        <FadeIn>
-          <div className="max-w-xl" style={{ marginBottom: "var(--space-16)" }}>
-            <Heading size="2xl">
-              Every system. One dashboard.
-            </Heading>
-            <Body
-              size="sm"
-              muted
-              style={{ marginTop: "var(--space-3)" }}
-            >
-              Every system we deploy lives in your workspace. Real-time
-              execution data, system health, and performance metrics —
-              visible and manageable from one place.
-            </Body>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.15}>
-          <DashboardPreview />
-        </FadeIn>
-      </Section>
 
       {/* ── Process ─────────────────────────────────────────── */}
       <Section id="process">

@@ -1,33 +1,21 @@
 "use client";
 
 const row1 = [
-  "Signal Detection",
-  "Cold Outreach Sequencer",
-  "CRM Enrichment Engine",
-  "Content Distribution",
-  "Lead Scoring Pipeline",
-  "Webinar Follow-up Flow",
-  "Market Expansion Tracker",
-  "Invoice Automation",
-  "SEO Brief Generator",
-  "Customer Onboarding",
-  "Hiring Signal Alerts",
-  "Referral Engine",
+  "Job Posting Signal Outbound",
+  "Ad Intelligence Analyzer",
+  "Proposal Generator",
+  "Pre-Meeting Sales Brief",
+  "Lead Magnet Generator",
+  "Podcast Content Transformer",
 ];
 
 const row2 = [
-  "Competitor Monitoring",
-  "Social Scheduler",
-  "Data Warehouse Sync",
-  "Event Lead Capture",
-  "Reporting Dashboard",
-  "LinkedIn Engagement",
-  "Newsletter Automation",
-  "Proposal Generator",
-  "Slack Ops Router",
-  "Funding Alert System",
-  "Review Request Flow",
-  "Intake Form Router",
+  "AI Video Ad Generator",
+  "Competitor Ad Alerts",
+  "Funding Signal Outbound",
+  "Inbound Lead Responder",
+  "Outbound Email Generator",
+  "Sales Briefing System",
 ];
 
 function MarqueeRow({
