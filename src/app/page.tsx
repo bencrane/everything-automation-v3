@@ -70,9 +70,36 @@ const catalogSystems = [
 ];
 
 const steps = [
-  { id: "01", name: "Find", description: "Identify your ideal prospects through hiring signals, funding events, and lookalike targeting." },
-  { id: "02", name: "Engage", description: "Personalized outreach, content, and competitive intel — generated and delivered automatically." },
-  { id: "03", name: "Close", description: "Proposals, briefs, and follow-ups — ready before the meeting starts." },
+  {
+    id: "01",
+    name: "Attract",
+    description: "Get in front of the right people. Content systems, LinkedIn posts, and lead magnets — generated from your expertise, distributed automatically.",
+    systems: ["Lead Magnet Generator", "Podcast Content Transformer", "LinkedIn Content System"],
+  },
+  {
+    id: "02",
+    name: "Capture",
+    description: "Find and reach your ideal prospects before they find your competitors. Signal-based outbound triggered by hiring activity, funding rounds, and lookalike targeting.",
+    systems: ["Job Posting Signal Outbound", "Funding Signal Outbound", "Creative Ideas Campaign", "LinkedIn Outbound Engine"],
+  },
+  {
+    id: "03",
+    name: "Nurture",
+    description: "Stay sharp between first touch and first call. Competitive intel, ad analysis, and follow-up sequences that keep you relevant.",
+    systems: ["Ad Intelligence Analyzer", "Competitor Ad Alerts", "Follow-Up Sequence Builder"],
+  },
+  {
+    id: "04",
+    name: "Close",
+    description: "Walk into every meeting prepared. Walk out with a proposal sent. Briefs, proposals, and case studies — generated in minutes.",
+    systems: ["Pre-Meeting Sales Brief", "Proposal Generator", "Case Study Generator"],
+  },
+  {
+    id: "05",
+    name: "Scale",
+    description: "Produce creative at volume. Monitor competitors continuously. Keep winning without adding headcount.",
+    systems: ["AI Video Ad Generator", "Ad Copy Variation Engine", "Competitor Positioning Tracker"],
+  },
 ];
 
 /* ── Page ──────────────────────────────────────────────────── */
@@ -223,11 +250,10 @@ export default function Home() {
             <Body
               size="sm"
               muted
-              className="max-w-lg"
+              className="max-w-xl"
               style={{ marginTop: "var(--space-3)" }}
             >
-              Four core categories. Dozens of production systems.
-              If it can be automated, we&apos;ve already built it.
+              Six core categories. Dozens of production systems. If it can be automated, we&apos;ve already built it.
             </Body>
           </div>
         </FadeIn>
@@ -289,31 +315,90 @@ export default function Home() {
         </FadeIn>
         <div>
           {steps.map((step, i) => (
-            <FadeIn key={step.id} delay={i * 0.1}>
+            <FadeIn key={step.id} delay={i * 0.08}>
               <div
-                className="grid grid-cols-1 sm:grid-cols-[80px_200px_1fr] sm:items-baseline"
+                className="grid grid-cols-1 lg:grid-cols-[1fr_300px]"
                 style={{
                   padding: "var(--space-10) 0",
-                  gap: "var(--space-4)",
+                  gap: "var(--space-8)",
                   borderBottom:
                     i < steps.length - 1
                       ? "1px solid var(--color-border-subtle)"
                       : "none",
                 }}
               >
-                <Label>{step.id}</Label>
-                <h3
-                  className="font-semibold"
+                {/* Left: Stage info */}
+                <div>
+                  <div className="flex items-baseline" style={{ gap: "var(--space-4)", marginBottom: "var(--space-3)" }}>
+                    <span
+                      className="font-mono"
+                      style={{
+                        fontSize: "var(--text-xs)",
+                        color: "var(--color-text-ghost)",
+                        letterSpacing: "var(--tracking-wider)",
+                      }}
+                    >
+                      {step.id}
+                    </span>
+                    <h3
+                      className="font-semibold"
+                      style={{
+                        fontSize: "var(--text-xl)",
+                        letterSpacing: "var(--tracking-tight)",
+                      }}
+                    >
+                      {step.name}
+                    </h3>
+                  </div>
+                  <Body size="sm" muted className="max-w-lg">
+                    {step.description}
+                  </Body>
+                </div>
+
+                {/* Right: Systems */}
+                <div
+                  className="flex flex-col"
                   style={{
-                    fontSize: "var(--text-lg)",
-                    letterSpacing: "var(--tracking-tight)",
+                    gap: "var(--space-2)",
+                    paddingTop: "var(--space-1)",
                   }}
                 >
-                  {step.name}
-                </h3>
-                <Body size="sm" muted>
-                  {step.description}
-                </Body>
+                  <span
+                    className="font-mono uppercase"
+                    style={{
+                      fontSize: "10px",
+                      letterSpacing: "var(--tracking-wider)",
+                      color: "var(--color-text-ghost)",
+                      marginBottom: "var(--space-1)",
+                    }}
+                  >
+                    Systems
+                  </span>
+                  {step.systems.map((system) => (
+                    <div
+                      key={system}
+                      className="flex items-center"
+                      style={{ gap: "var(--space-2)" }}
+                    >
+                      <span
+                        className="shrink-0 rounded-full"
+                        style={{
+                          width: "4px",
+                          height: "4px",
+                          background: "var(--color-text-muted)",
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: "var(--text-sm)",
+                          color: "var(--color-text-secondary)",
+                        }}
+                      >
+                        {system}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           ))}
